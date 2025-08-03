@@ -39,13 +39,18 @@
     </div>
 
     <a-scene embedded>
+      <!-- Assets -->
+      <a-assets>
+        <a-asset-item id="avocadoModel" src="Avocado.glb"></a-asset-item>
+      </a-assets>
+
       <!-- Lighting -->
       <a-entity light="type: ambient; color: #FFF; intensity: 0.6"></a-entity>
       <a-entity light="type: directional; color: #FFF; intensity: 0.8" position="1 3 2"></a-entity>
 
       <!-- Model -->
       <a-entity id="model"
-                gltf-model="Avocado.glb"
+                gltf-model="#avocadoModel"
                 position="0 0 -2"
                 rotation="0 180 0"
                 scale="1 1 1"
@@ -58,10 +63,10 @@
 
     <script>
       const model = document.querySelector('#model');
-      const default = {
-        pos: { x:0, y:0, z:-2 },
-        rot: { x:0, y:180, z:0 },
-        scale: { x:1, y:1, z:1 }
+      const defaultState = {
+        pos: { x: 0, y: 0, z: -2 },
+        rot: { x: 0, y: 180, z: 0 },
+        scale: { x: 1, y: 1, z: 1 }
       };
 
       function scaleModel(factor) {
@@ -74,9 +79,9 @@
       }
 
       function resetModel() {
-        model.setAttribute('position', default.pos);
-        model.setAttribute('rotation', default.rot);
-        model.setAttribute('scale', default.scale);
+        model.setAttribute('position', defaultState.pos);
+        model.setAttribute('rotation', defaultState.rot);
+        model.setAttribute('scale', defaultState.scale);
       }
     </script>
   </body>
