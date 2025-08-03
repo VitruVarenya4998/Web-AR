@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AR Glb Test</title>
-  <script type="module"
-    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <title>Optimized WebAR Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    body { margin: 0; }
+    body {
+      margin: 0;
+      background-color: #000;
+    }
     model-viewer {
       width: 100vw;
       height: 100vh;
+      background: #000;
     }
   </style>
 </head>
@@ -17,13 +20,18 @@
 
 <model-viewer
   src="Avocado.glb"
-  alt="Avocado 3D model"
+  alt="3D Avocado"
   ar
   ar-modes="scene-viewer webxr quick-look"
   camera-controls
   auto-rotate
-  environment-image="neutral"
-  shadow-intensity="1">
+  auto-rotate-delay="0"
+  disable-zoom
+  exposure="0.9"
+  shadow-intensity="0"
+  environment-image="legacy"
+  reveal="interaction"
+  loading="lazy">
 </model-viewer>
 
 </body>
