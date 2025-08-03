@@ -61,28 +61,29 @@
       <a-camera position="0 1.6 0"></a-camera>
     </a-scene>
 
-    <script>
-      const model = document.querySelector('#model');
-      const defaultState = {
-        pos: { x: 0, y: 0, z: -2 },
-        rot: { x: 0, y: 180, z: 0 },
-        scale: { x: 1, y: 1, z: 1 }
-      };
+   <script>
+  const model = document.querySelector('#model');
+  const defaultState = {
+    pos: { x: 0, y: 0, z: -2 },
+    rot: { x: 0, y: 180, z: 0 },
+    scale: { x: 1, y: 1, z: 1 }
+  };
 
-      function scaleModel(factor) {
-        const s = model.getAttribute('scale');
-        model.setAttribute('scale', {
-          x: s.x * factor,
-          y: s.y * factor,
-          z: s.z * factor
-        });
-      }
+  function scaleModel(factor) {
+    const s = model.getAttribute('scale');
+    model.setAttribute('scale', {
+      x: s.x * factor,
+      y: s.y * factor,
+      z: s.z * factor
+    });
+  }
 
-      function resetModel() {
-        model.setAttribute('position', defaultState.pos);
-        model.setAttribute('rotation', defaultState.rot);
-        model.setAttribute('scale', defaultState.scale);
-      }
-    </script>
+  function resetModel() {
+    model.setAttribute('position', defaultState.pos);
+    model.setAttribute('rotation', defaultState.rot);
+    model.setAttribute('scale', defaultState.scale);
+  }
+</script>
+
   </body>
 </html>
